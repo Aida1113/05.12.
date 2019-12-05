@@ -1,0 +1,94 @@
+%liafter{
+    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    transition: .3s;
+                    height: 1px;
+                    background: #e9204F;
+}
+.dgbtn{
+    padding: 12px 25px;
+    border: 1px solid #e9204F;
+    color: white;
+    transition: .3s;
+    border-radius: 0;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        background: #e9204F;
+        z-index: -5;
+        transition: .3s ease-in-out ;
+    }
+    &:hover{
+        color: white;
+        &::after{
+            width: 100%;
+        }
+    }
+}
+.dline{
+    height: 2px;
+    width: 60px;
+    margin: 25px 0;
+    background: #e9204F;
+
+}
+#header{
+    position: fixed;
+    width: 100%;
+    .logo{
+        a{
+            color: white;
+        }
+    }
+    .menu{
+        li{
+            a{
+                color: white;
+                position: relative;
+                text-decoration: none;
+                padding: 5px 0;
+                &.liactive{
+                    &::after{
+                        @extend %liafter;
+                        width: 20px;
+               }
+                }
+                &::after{
+                    width: 0;
+                    @extend %liafter
+                }
+                &:hover{
+                    &::after{
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+// *************************************************
+#digital{
+    background-color: black;
+    background-image: url(../foto/hero_02.jpg);
+        padding: 170px 0;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-size: 640px;
+       background-position: 70% 95%;
+}
+.digital-middle{
+    color: white;
+    h1{
+        font-size: 78px;
+        margin-bottom: 30px;
+    }
+}
